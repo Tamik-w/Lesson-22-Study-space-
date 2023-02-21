@@ -1,24 +1,20 @@
-let firstArray = [5, 3, -4, 25, 32, -16, 6];
+const firstArray = [5, 3, -4, 25, 32, -16, 6];
 
-let secondArray = [21, -30, 9, 5, 12, -19, 5, 25];
+const secondArray = [21, -30, 9, 5, 12, -19, 5, 25];
 
-function countNumbers(firstArray, secondArray){
-
-    for(let i = 0; i < secondArray.lenght; i++){
-        if(+firstArray[i] > +secondArray[i]){
-            return console.log('a')
+firstArray.forEach((item, index, array) => {
+    secondArray.forEach((item2, index2, array2) => {
+        if(item > +item2){
+            console.log(`${item} > ${item2}`);
         }
-        else if(+firstArray[i] < +secondArray[i]){
-            return console.log('a')
+        else if(item < +item2){
+            console.log(`${item} < ${item2}`);
         }
-        else if(firstArray[i] == secondArray[i]){
-            return 3;
+        else if(item === +item2){
+            console.log(`${item} = ${item2}`);
         }
         else{
             return 'error'
         }
-    }
-
-}
-
-console.log(countNumbers(firstArray, secondArray));
+    });
+});
